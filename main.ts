@@ -1,11 +1,11 @@
-input.onButtonPressed(Button.A, function () {
-    strip.showColor(neopixel.colors(NeoPixelColors.Orange))
-    basic.pause(2000)
-    strip.showColor(neopixel.colors(NeoPixelColors.White))
-})
-let strip: neopixel.Strip = null
-strip = neopixel.create(DigitalPin.P1, 1, NeoPixelMode.RGB)
-strip.setBrightness(20)
+let strip = neopixel.create(DigitalPin.P0, 3, NeoPixelMode.RGB)
+strip.setBrightness(10)
+strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
+strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Blue))
 basic.forever(function () {
-	
+    basic.pause(200)
+    strip.show()
+    basic.pause(200)
+    strip.rotate(1)
 })
